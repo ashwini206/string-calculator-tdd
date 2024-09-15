@@ -1,0 +1,11 @@
+{
+  "name": "string-calculator-tdd",
+  "version": "1.0.0",
+  "description": "The  String Calculator TDD Kata is a TDD exercise where you implement a method to sum numbers from a string, handling various delimiters and edge cases step by step.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ashwini Kashyap",
+  "license": "ISC"
+}
