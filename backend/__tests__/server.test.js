@@ -6,4 +6,8 @@ describe('POST /add', () => {
         const res = await request(app).post('/add').send({ numbers: "" });
         expect(res.body.sum).toBe(0);
     });
+    it('should return the number itself for a single number input', async () => {
+        const res = await request(app).post('/add').send({ numbers: "5" });
+        expect(res.body.sum).toBe(5);
+    });
 });
