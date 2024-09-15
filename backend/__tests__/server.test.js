@@ -17,5 +17,10 @@ describe('POST /add', () => {
     it('should handle new lines as delimiters', async () => {
         const res = await request(app).post('/add').send({ numbers: "1\n2,3" });
         expect(res.body.sum).toBe(6);
-    });    
+    });
+    it('should support custom delimiters', async () => {
+        const res = await request(app).post('/add').send({ numbers: "//;\n1;2" });
+        expect(res.body.sum).toBe(3);
+    });
+        
 });
