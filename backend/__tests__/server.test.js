@@ -22,5 +22,9 @@ describe('POST /add', () => {
         const res = await request(app).post('/add').send({ numbers: "//;\n1;2" });
         expect(res.body.sum).toBe(3);
     });
-        
+    it('should throw an error for negative numbers', async () => {
+        const res = await request(app).post('/add').send({ numbers: "1,-2,3" });
+        expect(res.status).toBe(400);
+        expect(res.text).toBe("Negative numbers not allowed: -2");
+    });     
 });
