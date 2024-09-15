@@ -10,4 +10,8 @@ describe('POST /add', () => {
         const res = await request(app).post('/add').send({ numbers: "5" });
         expect(res.body.sum).toBe(5);
     });
+    it('should return the sum for multiple numbers', async () => {
+        const res = await request(app).post('/add').send({ numbers: "1,2,3" });
+        expect(res.body.sum).toBe(6);
+    });
 });
